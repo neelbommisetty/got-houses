@@ -1,5 +1,18 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './HouseCard.css';
+
+const regionToClassName = {
+  'Dorne': 'dorne',
+  'The North': 'north',
+  'The Reach': 'reach',
+  'The Crownlands': 'crownlands',
+  'The Westerlands': 'westerlands',
+  'The Vale': 'vale',
+  'The Riverlands': 'riverlands',
+  'The Stormlands': 'stormlands',
+  'Iron Islands': 'ironislands'
+}
 
 export default class HouseCard extends Component {
   static propTypes = {
@@ -11,7 +24,7 @@ export default class HouseCard extends Component {
     return (
       <div className="card">
         <div className="card-header">
-          <div className='card-header-title is-centered'>{house.name} {house.diedOut ? `(Died out in ${house.diedOut})` : ''}</div>
+          <div className={`card-header-title is-centered ${regionToClassName[house.region]}`}>{house.name} {house.diedOut ? `(Died out in ${house.diedOut})` : ''}</div>
         </div>
         <div className="card-content has-text-left">
             <ul>
@@ -20,7 +33,8 @@ export default class HouseCard extends Component {
               <li><b>Overlord:</b> {house.overlord ? house.overlord.name: '-'} </li>
               <li><b>Heir:</b> {house.heir ? house.heir.name : '-'} </li>
               <li><b>Region:</b> {house.region || '-'}</li>
-              <li><b>Coat of Arms:</b> {house.coatOfArms || '-'}</li>
+            <li><b>Coat of Arms:</b> {house.coatOfArms || '-'}</li>
+            <li><b>Titles:</b> {house.titles.length ? house.titles.join(',') : '-'}</li>
           </ul>
           </div>
       </div>

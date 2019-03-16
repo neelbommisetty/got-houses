@@ -1,0 +1,34 @@
+.dorne{
+  background: #000075;
+  color: white;
+}
+.north {
+  color: white;
+  background: #911eb4;
+}
+.reach {
+  color: white;
+  background: #ffe119;
+}
+.westerlands {
+  color: white;
+  background: #469990;
+}
+.vale {
+ color: white;
+ background: #e6194B;
+}
+
+.riverlands, .stormlands, .crownlands{
+  color: white;
+  background: #e6beff;
+}
+
+.ironislands {
+  color: white;
+  background: #aaffc3;
+}
+
+.card{
+  height: 350px;
+}
